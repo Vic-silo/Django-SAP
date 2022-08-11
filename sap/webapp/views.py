@@ -3,4 +3,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def bienvenido(request):
-    return HttpResponse('Mi primer Hola')
+    return HttpResponse('A SAP application.')
