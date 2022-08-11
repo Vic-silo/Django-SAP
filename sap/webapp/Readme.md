@@ -1,0 +1,1 @@
+App para la gestion de paginas genéricas del proyecto Django.

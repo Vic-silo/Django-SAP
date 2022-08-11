@@ -59,6 +59,8 @@ Por lo tanto, en la lista *urlpatterns* se deberá añadir el siguiente path (a 
 ``path('cualquier_url/', funcion),``. Si queremos que sin necesidad de insertar url se ejecute una pagina, 
 el path deberemos dejarlo vacio tal que ``path('', funcion)``.
 
+***Nota:*** *Es posible añadir una extensión al path deseado ``path('ruta.html', funcion)``
+
 Para poder emplear la función deseada, se deberá importar desde la ruta del archivo *views.py* del
 directorio de la app ``from nombre_proyecto.nombre_app.views import nombre_funcion``
 
@@ -78,3 +80,25 @@ Como parámetro return de la función, se le indica a Django un *HttpResponse* c
 ### IMPORTANTE
 En el caso que exista algun fallo *ModuleNotFoundError* en la importación de la función de view de nuestra app,
 se debe indicar en el editor (en este caso Pycharm) que nuestro directorio del proyecto Django es nuestro "Source Root"
+
+# Creación de TEMPLATES
+Para crear plantillas *.html* que mostrar en las páginas de nuestro proyecto Django, se debe crear primero de todo un 
+directorio para almacenar las plantillas, este directorio "***templates***" se encontrará dentro del directorio de nuestra 
+app.
+
+Adicionalmente, se puede incluir archivos *.css* para el desarrollo de nuestras páginas en el proyecto de Django. Para ello, 
+se deberá crear el directorio "***static***", en el mismo nivel que *templates*, donde se albergará los códigos *.css*.
+
+### ¿Cómo mostrar página .html?
+Para poder visualizar la plantilla *.html* creada, desde nuestra función en *views.py* se deberá llamar a la misma del
+siguiente modo: ``return render(request, 'wellcome.html')``.
+
+Además, al archivo *.html* que se tenga, se deberá añadir en el encabezado (<head></head>) la conexión al archivo *.css*
+que se vaya a emplear del siguiente modo:
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'nombre_archivo.css' %}">
+
+***Fuente:*** 
+- *https://pythonprogramming.net/css-django-tutorial/*
+- *http://javaatpoint.com/how-to-link-static-filescss-in-django-with-templatehtml-in-easy-way-use-html-and-css-in-django/*

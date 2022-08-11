@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from webapp.views import bienvenido
+from webapp.views import wellcome
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bienvenido/', bienvenido),
+    path('', wellcome),
 ]
