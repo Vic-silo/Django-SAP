@@ -21,4 +21,5 @@ import webapp.views as webapp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', webapp.login),
+    # path('/aux', 'home.html'),
 ]
