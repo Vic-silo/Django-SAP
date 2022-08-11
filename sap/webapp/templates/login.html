@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>SAP Application</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+  </head>
+  <body>
+  <div class="presentation">SAP Login</div>
+    <form class="login-form">
+      <p class="login-text">
+        <span class="fa-stack fa-lg">
+          <i class="fa fa-lock fa-stack-1x"></i>
+        </span>
+      </p>
+      <input type="email" class="login-username" autofocus="true" required="true" placeholder="Email" />
+      <input type="password" class="login-password" required="true" placeholder="Password" />
+      <input type="submit" name="Login" value="Login" class="login-submit" />
+    </form>
+    <div class="underlay-photo"></div>
+    <div class="underlay-black"></div>
+    <a href="#" class="login-forgot-pass">forgot password?</a>
+  </body>
+</html>
